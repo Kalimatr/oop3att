@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  postgres:
+    image: 'postgres:latest'
+    container_name: 'kalimatr_container'
+    ports:
+      - "8081:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: pass
+      POSTGRES_DB: first_db
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+volumes:
+  postgres-data:
